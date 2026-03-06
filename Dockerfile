@@ -1,6 +1,6 @@
-FROM golang:1.23.1 AS build
+FROM golang:1.26.0 AS build
 # renovate: name=airship/kubernetes-entrypoint repo=https://opendev.org/airship/kubernetes-entrypoint.git branch=master
-ARG KUBERNETES_ENTRYPOINT_GIT_REF=cc2737be5285951ac08b32e76dfd375e1a0ab81f
+ARG KUBERNETES_ENTRYPOINT_GIT_REF=15b84102d9f2d106657412054aac29b5c6fbdba4
 ADD https://opendev.org/airship/kubernetes-entrypoint.git#${KUBERNETES_ENTRYPOINT_GIT_REF} /src
 WORKDIR /src
 RUN CGO_ENABLED=0 GOOS=linux go build -o /main
